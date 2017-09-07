@@ -1,5 +1,6 @@
-import sum from '../src/sum';
 import { expect } from 'chai';
+
+import sum from '../src/sum';
 
 describe('Example ES6+ Mocha / Chai Test', function() {
   let a = 1;

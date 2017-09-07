@@ -39,3 +39,5 @@ reports/
 dist/
 node_modules/
 test-results.xml
+
+build

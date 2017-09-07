@@ -1,5 +1,5 @@
-'use strict';
 /* eslint no-unused-vars: [0, { "varsIgnorePattern": "[rR]esults" }] */
+
 import benchmark from 'benchmark';
 import { sum } from '../src/sum';
 
@@ -11,16 +11,16 @@ const b = 2;
 let result = 0;
 
 suite
-  .add('sum module addition with 2 numbers', function() {
+  .add('sum module addition with 2 numbers', () => {
     result = sum(a, b);
   })
-  .add('sum module addition with 2 numbers', function() {
+  .add('sum module addition with 2 numbers', () => {
     result = a + b;
   })
-  .on('cycle', function(event) {
+  .on('cycle', (event) => {
     console.log(String(event.target));
   })
-  .on('complete', function() {
-    console.log('Fastest is ' + this.filter('fastest').map('name'));
+  .on('complete', function () {
+    console.log(`Fastest is ${this.filter('fastest').map('name')}`);
   })
-  .run({ 'async': true });
+  .run({ async: true });
